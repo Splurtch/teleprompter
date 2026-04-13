@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teleprompter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel panel-controls">
+        <h1 id="appTitle">Teleprompter</h1>
+        <label for="scriptInput">Guion</label>
+        <textarea id="scriptInput" rows="14" placeholder="Escribe aquí tu guion..."></textarea>
+
+        <div class="control-group">
+          <label for="speedRange">Velocidad: <span id="speedValue">40</span> px/s</label>
+          <input id="speedRange" type="range" min="10" max="180" value="40" />
+        </div>
+
+        <div class="control-group">
+          <label for="fontRange">Tamaño fuente: <span id="fontValue">48</span> px</label>
+          <input id="fontRange" type="range" min="24" max="96" value="48" />
+        </div>
+
+        <div class="button-row">
+          <button id="playPauseBtn" type="button">Iniciar</button>
+          <button id="resetBtn" type="button">Reiniciar</button>
+          <button id="mirrorBtn" type="button">Espejo: OFF</button>
+          <button id="fullscreenBtn" type="button">Pantalla completa</button>
+        </div>
+
+        <p class="hint">Atajos: Espacio (iniciar/pausar), R (reiniciar), M (espejo), F (pantalla completa)</p>
+      </section>
+
+      <section class="panel panel-preview">
+        <div id="teleprompterViewport" class="viewport">
+          <div id="teleprompterText" class="teleprompter-text"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
